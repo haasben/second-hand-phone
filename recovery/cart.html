@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<div class="contents cart">
+				<ul>
+					<li>
+						<div class="check">
+							<input type="checkbox" name="" value="" />
+						</div>
+						<div class="imgs">
+							<a href="detail.html">
+								<img src="img/phone1.jpg" >
+							</a>
+						</div>
+						<div class="info">
+							<a href="detail.html">
+								<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+								<p class="spec">
+									<span>规格：</span>
+									<span>标配</span>
+								</p>
+								<p class="price">￥<span>4999.5688</span></p>
+							</a>
+						</div>
+					</li>
+					<li>
+						<div class="check">
+							<input type="checkbox" name="" value="" />
+						</div>
+						<div class="imgs">
+							<a href="detail.html">
+								<img src="img/phone1.jpg" >
+							</a>
+						</div>
+						<div class="info">
+							<a href="detail.html">
+								<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+								<p class="spec">
+									<span>规格：</span>
+									<span>标配</span>
+								</p>
+								<p class="price">￥<span>4999</span></p>
+							</a>
+						</div>
+					</li>
+				</ul>
+				<!-- 结算 -->
+				<div class="total">
+					<div class="all_check">
+						<input type="checkbox" name="all" value=""/><label for="all">全选</label>
+					</div>
+					<div class="all_handle">
+						<div class="all_price">
+							￥<strong>0</strong>
+						</div>
+						<button type="button" class="settle" disabled>去结算</button>
+					</div>
+				</div>
+			</div>
+			
+			<footer>
+				<dl>
+					<a href="./">
+						<dt class="i">&#xe65b;</dt>
+						<dd>首页</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="category.html">
+						<dt class="i">&#xe659;</dt>
+						<dd>分类</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="cart.html">
+						<dt class="i">&#xe658;</dt>
+						<dd>购物车</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="mine">
+						<dt class="i">&#xe65d;</dt>
+						<dd>我的</dd>
+					</a>
+				</dl>
+			</footer>
+		</div>
+		
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 单选
+			$('.cart li').find('input[type=checkbox]').click(function(){
+				let cL = $('.cart li').find('input[type=checkbox]').length;  //列表长度
+				let cH = $('.cart li').find('input[type=checkbox]:checked').length; //列表中被选中的长度
+				// 选中所有的则勾选全选框
+				if(cH == cL){
+					$('.all_check input').prop('checked',true);
+				}
+				else{
+					$('.all_check input').prop('checked',false);
+				}
+				
+				totalPrice();
+				btn_status();
+			})
+			
+			// 全选
+			$('.all_check').on('click', 'input', function(){
+				if(this.checked){
+					$('.cart li').find('input[type=checkbox]').prop('checked',true);
+				}
+				else{
+					$('.cart li').find('input[type=checkbox]').prop('checked',false);
+				}
+				totalPrice();
+				btn_status();
+			})
+			
+			// 总价格
+			function totalPrice(){
+				let price = 0;
+				let list = $('.cart li').find('input[type=checkbox]:checked');
+				list.each(function(){
+					let num = $(this).parents('li').find('.price span').text();
+					price += Number(num);
+				})
+				$('.all_price').find('strong').text(price.toFixed(2));
+			}
+			
+			// 结算按钮状态改变
+			function btn_status(){
+				let leng = $('.cart li').find('input[type=checkbox]:checked').length;
+				if(leng > 0){
+					$('.settle').addClass('on');
+					$('.settle').attr('disabled',false);
+				}
+				else{
+					$('.settle').removeClass('on');
+					$('.settle').attr('disabled',true);
+				}
+			}
+			
+			// 去结算
+			$('.settle').on('click', function(){
+				location.href = 'settle.html';
+			})
+		</script>
+	</body>
+</html>

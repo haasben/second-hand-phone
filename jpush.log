@@ -1,0 +1,3 @@
+Send POST https://api.jpush.cn/v3/push, body:, times:1
+Send POST https://api.jpush.cn/v3/push, body:, times:1
+Send POST https://api.jpush.cn/v3/push, body:{"platform":"all","audience":"all","notification":{"alert":"&lt;p&gt;\u53d1\u58eb\u5927\u592b\u58eb\u5927\u592b\u53cd\u5012\u662f\u7b2c\u4e09\u65b9&lt;\/p&gt;"},"message":{"msg_content":"&lt;p&gt;\u53d1\u58eb\u5927\u592b\u58eb\u5927\u592b\u53cd\u5012\u662f\u7b2c\u4e09\u65b9&lt;\/p&gt;","title":"\u4fc3\u9500\u6d3b\u52a8\u4e8c"},"options":{"sendno":39113,"apns_production":false}}, times:1

@@ -1,0 +1,39 @@
+<footer>
+	<dl>
+		<a href="/">
+			<dt class="i">&#xe65b;</dt>
+			<dd>首页</dd>
+		</a>
+	</dl>
+	<dl>
+		<a href="{:url('index/category/index')}">
+			<dt class="i">&#xe659;</dt>
+			<dd>分类</dd>
+		</a>
+	</dl>
+	<dl>
+		<a href="cart.html">
+			<dt class="i">&#xe658;</dt>
+			<dd>购物车</dd>
+		</a>
+	</dl>
+	<dl>
+		<a href="mine">
+			<dt class="i">&#xe65d;</dt>
+			<dd>我的</dd>
+		</a>
+	</dl>
+</footer>
+</div>
+
+<script src="__INDEX__js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="__INDEX__js/public.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		$('.to_search').on('click',function(){
+			window.location.href= "{:url('index/index/search')}";
+		})
+	})
+
+
+</script>

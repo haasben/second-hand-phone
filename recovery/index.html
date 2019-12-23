@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<input type="search" class="to_search" placeholder="搜索商品,获得更多好货">
+			</header>
+			<main class="contents">
+				<!-- banner -->
+				<div class="banner">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="img/banner1.jpeg" >
+							</div>
+							<div class="swiper-slide">
+								<img src="img/banner1.jpeg" >
+							</div>
+							<div class="swiper-slide">
+								<img src="img/banner1.jpeg" >
+							</div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="category">
+					<ul>
+						<li>
+							<a href="javascript:">
+								<img src="img/iphone.png" >
+								<span>苹果</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img src="img/huawei.png" >
+								<span>华为</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img src="img/oppo(1).png" >
+								<span>oppo</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img src="img/vivo.png" >
+								<span>vivo</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img src="img/notebook.png" >
+								<span>笔记本</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img src="img/ipad.png" >
+								<span>平板</span>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<img src="img/miao.png" >
+								<span>限时秒杀</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+				<!-- 今日秒杀 -->
+				<div class="adv">
+					<div class="adv_seckill">
+						<span>限时秒杀</span>
+						<div class="img-box">
+							<img src="img/m.png" >
+							<img src="img/m2.png" >
+						</div>
+						
+					</div>
+					<div class="adv_recovery">
+						<span>手机回收</span>
+						<div class="wrap">
+							<p>极速打款有保障,最高加价20%</p>
+							<img src="img/m.png" >
+						</div>
+						
+					</div>
+				</div>
+				<!-- 为你推荐 -->
+				<div class="goods_list">
+					<div class="img-title">
+						<img src="img/rec.png" >
+					</div>
+					<ul>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/ca2.jpg" >
+								</div>
+								<div class="title">
+									<p>[爆款机型] P30只需新机价6折~</p>
+									<span>剩余15天</span>
+								</div>
+								<p class="explain">本活动限量300台,现仅剩180台</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/ca2.jpg" >
+								</div>
+								<div class="title">
+									<p>[爆款机型] P30只需新机价6折~</p>
+									<span>剩余15天</span>
+								</div>
+								<p class="explain">本活动限量300台,现仅剩180台</p>
+							</a>
+						</li>
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="img/ca2.jpg" >
+								</div>
+								<div class="title">
+									<p>[爆款机型] P30只需新机价6折~</p>
+									<span>剩余15天</span>
+								</div>
+								<p class="explain">本活动限量300台,现仅剩180台</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			
+			
+			</main>
+			
+			<footer>
+				<dl>
+					<a href="./">
+						<dt class="i">&#xe65b;</dt>
+						<dd>首页</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="category.html">
+						<dt class="i">&#xe659;</dt>
+						<dd>分类</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="cart.html">
+						<dt class="i">&#xe658;</dt>
+						<dd>购物车</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="mine">
+						<dt class="i">&#xe65d;</dt>
+						<dd>我的</dd>
+					</a>
+				</dl>
+			</footer>
+			
+			<!-- 返回顶部 -->
+			<div class="to_top"></div>
+		</div>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myMobileSwiper = new Swiper ('.swiper-container', {
+				direction: 'horizontal', // 垂直切换选项
+				loop: true, // 循环模式选项
+				autoplay: true,
+				
+				// 如果需要分页器
+				pagination: {
+				  el: '.swiper-pagination',
+				},
+			})
+		</script>
+	</body>
+</html>

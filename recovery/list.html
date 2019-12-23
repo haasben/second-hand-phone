@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>商品列表</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<a href="javascript:" onclick="history.go(-1)" class="back"></a>
+				<input type="search" class="to_search" placeholder="搜索商品,获得更多好货">
+				<button type="button" class="btn_search">搜索</button>
+			</header>
+			<main class="contents list">
+				<div class="sort">
+					<div class="item t1">
+						<span>综合</span>
+					</div>
+					<span>|</span>
+					<div class="item t2">机型</div>
+					<span>|</span>
+					<div class="item t3">筛选</div>
+					<ul class="item1">
+						<li class="on">综合</li>
+						<li>价格最高</li>
+						<li>价格最低</li>
+					</ul>
+					<!-- 机型 -->
+					<div class="item2">
+						<div class="wrap">
+							<ul class="left_nav">
+								<li class="active" data-id="1">iPhone</li>
+								<li data-id="2">华为</li>
+								<li data-id="3">OPPO</li>
+								<li data-id="4">VIVO</li>
+								<li data-id="5">笔记本</li>
+								<li data-id="6">平板</li>
+							</ul>
+							<ul class="right_list">
+								<li>iPhone X</li>
+								<li>iPhone XR</li>
+								<li>iPhone 11</li>
+								<li>iPhone 8</li>
+								<li>iPhone 8plus</li>
+								<li>iPhone 7</li>
+								<li>iPhone 10</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 筛选 -->
+					<div class="item3">
+						<div class="wrap">
+							<div class="top_c">
+								<div class="price_range">
+									<h4>价格区间</h4>
+									<ul class="pri">
+										<li>0-1499</li>
+										<li>1500-1999</li>
+										<li>2000-2999</li>
+										<li>3000-4000</li>
+										<li>4000以上</li>
+									</ul>
+									<div class="price_search">
+										<input type="text" class="min" value="" placeholder="最小值" />
+										<span>-</span>
+										<input type="text" class="max" value="" placeholder="最大值" />
+									</div>
+								</div>
+								<div class="memory">
+									<h4>内存</h4>
+									<ul>
+										<li>64G</li>
+										<li>128G</li>
+										<li>256G</li>
+									</ul>
+								</div>
+								<div class="colour">
+									<h4>颜色</h4>
+									<ul>
+										<li>白色</li>
+										<li>黑色</li>
+										<li>红色</li>
+										<li>蓝色</li>
+										<li>红色</li>
+									</ul>
+								</div>
+								<div class="condition">
+									<h4>成色</h4>
+									<ul>
+										<li>99新</li>
+										<li>95新</li>
+										<li>9新</li>
+										<li>85新</li>
+										<li>8新</li>
+									</ul>
+								</div>
+							</div>
+							<div class="bottom_c">
+								<span class="cancel">取消</span>
+								<span class="sure">确认</span>
+							</div>
+							
+						</div>
+					</div>
+					
+				</div>
+				<ul class="goodsList">
+					<li>
+						<a href="detail.html">
+							<img src="img/phone.jpg" >
+							<p class="title">华为nova5</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone.webp" >
+							<p class="title">【超级爆款】华为 HUAWEI P30 超感光徕卡三摄麒麟980AI智能芯片全面屏屏内指纹版手机8GB+128GB天空之境全网通双4G手机</p>
+							<p class="price">￥2999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone1.jpg" >
+							<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone.jpg" >
+							<p class="title">华为nova5</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone.webp" >
+							<p class="title">【超级爆款】华为 HUAWEI P30 超感光徕卡三摄麒麟980AI智能芯片全面屏屏内指纹版手机8GB+128GB天空之境全网通双4G手机</p>
+							<p class="price">￥2999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone1.jpg" >
+							<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone.jpg" >
+							<p class="title">华为nova5</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone.webp" >
+							<p class="title">【超级爆款】华为 HUAWEI P30 超感光徕卡三摄麒麟980AI智能芯片全面屏屏内指纹版手机8GB+128GB天空之境全网通双4G手机</p>
+							<p class="price">￥2999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone1.jpg" >
+							<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+					<li>
+						<a href="detail.html">
+							<img src="img/phone1.jpg" >
+							<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+							<p class="price">￥1999.00</p>
+						</a>
+					</li>
+				</ul>
+			
+			</main>
+			<footer>
+				<dl>
+					<a href="./">
+						<dt class="i">&#xe65b;</dt>
+						<dd>首页</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="category.html">
+						<dt class="i">&#xe659;</dt>
+						<dd>分类</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="cart.html">
+						<dt class="i">&#xe658;</dt>
+						<dd>购物车</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="mine">
+						<dt class="i">&#xe65d;</dt>
+						<dd>我的</dd>
+					</a>
+				</dl>
+			</footer>
+			
+			<!-- 返回顶部 -->
+			<div class="to_top"></div>
+		</div>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/list.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				let isBool = false;
+				$('.sort').on('click', '.t1', function(){
+					if(!isBool){
+						$('.item1').slideDown();
+					}
+					else{
+						$('.item1').slideUp();
+					}
+					isBool = !isBool;
+				})
+			})
+		</script>
+	</body>
+</html>

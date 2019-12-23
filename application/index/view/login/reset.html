@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>重置密码</title>
+		<link rel="stylesheet" type="text/css" href="__INDEX__css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<a href="javascript:" onclick="history.go(-1)" class="back"></a>
+				<h3>重置密码</h3>
+			</header>
+			<div class="contents login">
+				<form class="form" id="form">
+					<div class="box">
+						<input type="text" class="mobile" name="mobile" value="" placeholder="手机号" />
+					</div>
+					<div class="box">
+						<input type="password" class="password" name="password" value="" placeholder="密码" />
+					</div>
+					<div class="box code_box">
+						<input type="text" class="code" value="" name="code" placeholder="验证码" />
+						<button class="getCode">获取验证码</button>
+					</div>
+					<div class="box btn_login">
+						<input type="button" class="register" value="立即重置"/>
+					</div>
+				</form>
+				<div class="to_reg">
+					<a href="{:url('index/login/register')}" style="float: left">还没有账号？立即注册</a>
+					<a href="{:url('index/login/index')}">已有账号？立即登录</a>
+				</div>
+			</div>
+		</div>
+		
+		<script src="__INDEX__js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__INDEX__js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__INDEX__js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.register').on('click',function(){
+
+				var data = $('#form').serialize();
+
+				$.post('{:url("index/login/reset")}',data,function(data){
+
+					if(data.code == 1){
+						layer.msg(data.msg,{time:1500},function(){
+
+							window.location.href="{:url('index/login/index')}";
+
+						});
+					}else{
+						layer.msg(data.msg,{time:1000});
+					}
+
+				})
+
+			})
+
+			$('.getCode').on('click', function(){
+				const phone = $('.mobile').val();
+				if(!(/^1[3456789]\d{9}$/.test(phone))){
+					layer.msg('请输入正确的手机号码');
+					return false;
+				}
+				let that = $(this);
+				let time = 60;
+				$.post('{:url("index/login/reset_send_msg")}',{mobile:phone},function(data){
+					if(data.code == 1){
+						
+						that.attr("disabled",true)
+						let timer = setInterval(()=>{
+							that.css("background-color","#ccc");
+							time--
+							that.text(time + 's后获取')
+							if(time == 0){
+								that.attr("disabled",false)
+								that.css("background-color","#4cb0f3");
+								that.text("重新获取")
+								clearInterval(timer)
+							}
+						},1000)
+					}else if(data.code == 3){
+						window.location.href="{:url('index/login/index')}";
+					}
+					layer.msg(data.msg);
+				})
+				return false;
+			})
+		</script>
+	</body>
+</html>

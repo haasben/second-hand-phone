@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<link rel="stylesheet" type="text/css" href="__INDEX__css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<a href="javascript:" onclick="history.go(-1)" class="back"></a>
+				<h3>用户登录</h3>
+			</header>
+			<div class="contents login">
+				<form id="form">
+					<div class="box">
+						<input type="text" class="username" name="username" value="" placeholder="手机号" />
+					</div>
+					<div class="box">
+						<input type="password" class="password" name="password" value="" placeholder="密码" />
+					</div>
+					<div class="box btn_login">
+						<input type="button" id="login" value="立即登录"/>
+					</div>
+				</form>
+
+					
+					
+				<div class="to_reg">
+					<a href="{:url('index/login/reset')}" style="float: left">忘记密码</a>
+					<a href="{:url('index/login/register')}">还没有账号？立即注册</a>
+				</div>
+			</div>
+		</div>
+		
+		<script src="__INDEX__js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__INDEX__js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="__INDEX__js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+
+					$('#login').on('click',function(){
+
+					var data = $('#form').serialize();
+
+					$.post('{:url("index/login/index")}',data,function(data){
+
+						if(data.code == 1){
+							layer.msg(data.msg,{time:1000},function(){
+
+								window.location.href='{:url("index/user/index")}';
+							});
+						}else{
+							layer.msg(data.msg,{time:1000});
+						}
+					})
+					return false;
+				})
+			})
+
+		</script>
+	</body>
+</html>

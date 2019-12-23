@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>分类</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<input type="search" class="to_search" placeholder="搜索商品,获得更多好货">
+			</header>
+			
+			<main class="contents mall">
+				<div class="aside">
+					<ul>
+						<li class="active" data-id="1">iPhone</li>
+						<li data-id="2">华为</li>
+						<li data-id="3">OPPO</li>
+						<li data-id="4">VIVO</li>
+						<li data-id="5">笔记本</li>
+						<li data-id="6">平板</li>
+					</ul>
+				</div>
+				<div class="conts">
+					<ul>
+						<li>
+							<a href="list.html">
+								<img src="img/m2.png" >
+								<span>iphone8</span>
+							</a>
+						</li>
+						<li>
+							<a href="list.html">
+								<img src="img/m2.png" >
+								<span>iphone8</span>
+							</a>
+						</li>
+						<li>
+							<a href="list.html">
+								<img src="img/m2.png" >
+								<span>iphone8</span>
+							</a>
+						</li>
+						<li>
+							<a href="list.html">
+								<img src="img/m2.png" >
+								<span>iphone8</span>
+							</a>
+						</li>
+						<li>
+							<a href="list.html">
+								<img src="img/m2.png" >
+								<span>iphone8</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				
+			</main>
+			
+			<footer>
+				<dl>
+					<a href="./">
+						<dt class="i">&#xe65b;</dt>
+						<dd>首页</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="category.html">
+						<dt class="i">&#xe659;</dt>
+						<dd>分类</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="cart.html">
+						<dt class="i">&#xe658;</dt>
+						<dd>购物车</dd>
+					</a>
+				</dl>
+				<dl>
+					<a href="mine">
+						<dt class="i">&#xe65d;</dt>
+						<dd>我的</dd>
+					</a>
+				</dl>
+			</footer>
+		</div>
+		
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$('.aside').on('click', 'li', function(){
+				const id = $(this).attr('data-id');
+				$(this).addClass('active').siblings().removeClass('active');
+				$.post()
+			})
+		</script>
+	</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>确认订单</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<a href="javascript:" onclick="history.go(-1)" class="back"></a>
+				<h3>确认订单</h3>
+			</header>
+			<div class="contents settles">
+				<!-- 收货地址 -->
+				<div class="addr">
+					<a href="address.html">
+						<div class="coord">
+							<img src="img/addr.png" >
+						</div>
+						<div class="info">
+							<p>
+								<span>收货人：<em>张三</em></span>
+								<span>13333333333</span>
+							</p>
+							<p>
+								<span>地址：</span>
+								<span>四川省 成都市 高新区</span>
+							</p>
+						</div>
+						<div class="next">
+							<img src="img/next.png" >
+						</div>
+					</a>
+				</div>
+				<!-- 订单列表 -->
+				<ul class="order_list">
+					<li>
+						<h4>订单一</h4>
+						<div class="order_shop">
+							<img src="img/phone1.jpg" >
+							<div class="wrap">
+								<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+								<p class="server">
+									<span>规格：</span>
+									<span>免费贴膜</span>
+								</p>
+								<p class="price">￥4999</p>
+							</div>
+						</div>
+						<div class="delivery">
+							<span>配送方式：</span>
+							<span>快递免邮</span>
+						</div>
+						<div class="message">
+							<textarea placeholder="给商家留言(最多50字)"></textarea>
+						</div>
+						
+					</li>
+					<li>
+						<h4>订单二</h4>
+						<div class="order_shop">
+							<img src="img/phone1.jpg" >
+							<div class="wrap">
+								<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+								<p class="server">
+									<span>规格：</span>
+									<span>免费贴膜</span>
+								</p>
+								<p class="price">￥4999</p>
+							</div>
+						</div>
+						<div class="delivery">
+							<span>配送方式：</span>
+							<span>快递免邮</span>
+						</div>
+						<div class="message">
+							<textarea placeholder="给商家留言(最多50字)"></textarea>
+						</div>
+					</li>
+				</ul>
+				<!-- 支付方式 -->
+				<div class="pay_method">
+					<h4>付款方式</h4>
+					<div class="box">
+						<input type="radio" name="zf" />
+						<div class="p">
+							<img src="img/w1.png" >
+							<span>微信支付</span>
+						</div>
+					</div>
+					<div class="box">
+						<input type="radio" name="zf" />
+						<div class="p">
+							<img src="img/z.png" >
+							<span>支付宝支付</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<!-- 立即支付 -->
+				<div class="payment">
+					<div class="tal">
+						合计：<span>￥4999</span>
+					</div>
+					<div class="btn">
+						<button type="button">立即支付</button>
+					</div>
+				</div>
+			</footer>
+		</div>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>

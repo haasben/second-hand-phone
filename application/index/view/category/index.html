@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>分类</title>
+		<link rel="stylesheet" type="text/css" href="__INDEX__css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<input type="search" class="to_search" placeholder="搜索商品,获得更多好货">
+			</header>
+			
+			<main class="contents mall">
+				<div class="aside">
+					<ul>
+						{volist name="$cates.category_list" id="v" key="k"}
+							
+						<li {if condition="$k == 1"}class="active"{/if} data-id="{$v.id}">{$v.name}</li>
+						{/volist}
+					</ul>
+				</div>
+				<div class="conts">
+					<ul>
+						{volist name="$cates.child_list" id="v"}
+						<li>
+							<a href="list.html">
+								<img src="{$v.image}" >
+								<span>{$v.name}</span>
+							</a>
+						</li>
+						{/volist}
+					</ul>
+				</div>
+			</main>
+{include file="common/footer"}
+		<script type="text/javascript">
+			$('.aside').on('click', 'li', function(){
+				const id = $(this).attr('data-id');
+				$(this).addClass('active').siblings().removeClass('active');
+				$.post('{:url("index/category/cate_child_list")}',{id:id},function(data){
+					if(data.code == 1){
+						var html = '';
+						$.each(data.data,function(item,v){
+							html+='<li><a href="list.html"><img src="'+v.image+'">';
+							html+='<span>'+v.name+'</span></a></li>';
+						})
+						$('.conts>ul').html(html);
+
+					}else{
+						alert('接口信息错误');
+					}
+
+				})
+				return false;
+			})
+		</script>
+	</body>
+</html>

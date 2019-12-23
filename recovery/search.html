@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>搜索</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<a href="javascript:" onclick="history.go(-1)" class="back"></a>
+				<input type="search" class="to_search" placeholder="搜索商品,获得更多好货">
+				<button type="button" class="btn_search">搜索</button>
+			</header>
+			<div class="contents search">
+				<div class="search_box">
+					<div class="search_history">
+						<h3>历史记录:</h3>
+						<ul class="history_list">
+							<li>
+								<a href="javascript:">华为 P30</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone 8</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone8 Plus</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone 11</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone X</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone XR</a>
+							</li>
+						</ul>
+						<div class="empty">清空搜索记录</div>
+					</div>
+					<div class="hot_search">
+						<h3>热门搜索:</h3>
+						<ul class="hot_list">
+							<li>
+								<a href="javascript:">华为 P30</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone 8</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone8 Plus</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone 11</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone X</a>
+							</li>
+							<li>
+								<a href="javascript:">iPhone XR</a>
+							</li>
+							<li>
+								<a href="javascript:">OPPO R15</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="result_list" style="display: block;">
+					<div class="sort">
+						<div class="item t1">
+							<span>综合</span>
+						</div>
+						<span>|</span>
+						<div class="item t2">机型</div>
+						<span>|</span>
+						<div class="item t3">筛选</div>
+						<ul class="item1">
+							<li class="on">综合</li>
+							<li>价格最高</li>
+							<li>价格最低</li>
+						</ul>
+					</div>
+					<ul>
+						<li>
+							<div class="img">
+								<a href="detail.html">
+									<img src="img/phone1.jpg" >
+								</a>
+							</div>
+							<div class="info">
+								<a href="detail.html">
+									<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+									<p class="price">
+										<span>￥4999</span>
+										<span>￥5999</span>
+									</p>
+								</a>
+								<p class="collect">
+									<img src="img/collection1.png" >
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="img">
+								<a href="detail.html">
+									<img src="img/phone1.jpg" >
+								</a>
+							</div>
+							<div class="info">
+								<a href="detail.html">
+									<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+									<p class="price">
+										<span>￥4999</span>
+										<span>￥5999</span>
+									</p>
+								</a>
+								<p class="collect">
+									<img src="img/collection1.png" >
+								</p>
+							</div>
+						</li>
+						<li>
+							<div class="img">
+								<a href="detail.html">
+									<img src="img/phone1.jpg" >
+								</a>
+							</div>
+							<div class="info">
+								<a href="detail.html">
+									<p class="title">Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</p>
+									<p class="price">
+										<span>￥4999</span>
+										<span>￥5999</span>
+									</p>
+								</a>
+								<p class="collect">
+									<img src="img/collection1.png" >
+								</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
+			<!-- 返回顶部 -->
+			<div class="to_top"></div>
+		</div>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// 清空历史记录
+			$('.empty').on('click', function(){
+				layer.confirm('确定要清空历史记录吗?', {
+					btn:['确定','取消']
+				},function(){
+					$('.history_list').empty();
+					$('.search_history').hide();
+				},function(){
+					
+				})
+			})
+			
+			// 搜索
+			$('.btn_search').on('click', function(){
+				let keyword = $('.to_search').val();
+				if(keyword == ''){
+					layer.msg('请输入搜索条件');
+					return false;
+				}
+				$.post()
+			})
+		
+			let isBool = false;
+			$('.sort').on('click', '.t1', function(){
+				if(!isBool){
+					$('.item1').slideDown();
+				}
+				else{
+					$('.item1').slideUp();
+				}
+				isBool = !isBool;
+			})
+		</script>
+	</body>
+</html>

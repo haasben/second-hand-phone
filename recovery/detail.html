@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>商品详情</title>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="js/swiper/css/swiper.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<main class="contents detail">
+				<a href="javascript:" onclick="history.go(-1)" class="back"></a>
+				<!-- 商品多图展示 -->
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<img src="img/shop_banner.webp" >
+						</div>
+						<div class="swiper-slide">
+							<img src="img/shop_banner2.webp" >
+						</div>
+						<div class="swiper-slide">
+							<img src="img/shop_banner3.webp" >
+						</div>
+					</div>
+					<div class="swiper-pagination"></div>
+				</div>
+				
+				<!-- 商品标题、价格 -->
+				<div class="title-box">
+					<h4>Apple iPhone XR (A2108) 128GB 黑色 移动联通电信4G手机 双卡双待</h4>
+					<div class="price">
+						<h3>￥6299</h3>
+						<div class="sheng">
+							<span>省</span>
+							<span>900元</span>
+						</div>
+						<div class="quan">
+							<span>全</span>
+							<span>￥7199</span>
+						</div>
+					</div>
+				</div>
+				<!-- 用户评价 -->
+				<div class="evaluate">
+					<h3>用户评价</h3>
+					<ul>
+						<li>
+							<a href="evaluate.html">
+								<div class="cmt_user">
+									<div class="left">
+										<img src="img/huawei.png" >
+										<span class="nickname">薇薇</span>
+									</div>
+									<div class="time">
+										<span>2019-11-20</span>
+									</div>
+								</div>
+								<div class="cmt_cont">
+									外型美观,运行速度块外型美观,运行速度块外型美观,运行速度块外型美观,运行速度块外型美观,运行速度块外型美观,运行速度块
+								</div>
+								<div class="cmt_imgs">
+									<img src="img/phone1.jpg" >
+									<img src="img/phone1.jpg" >
+									<img src="img/phone1.jpg" >
+									<img src="img/phone1.jpg" >
+									<img src="img/phone1.jpg" >
+									<img src="img/phone1.jpg" >
+								</div>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- 商品详情 -->
+				<div class="desc">
+					<h3>商品详情</h3>
+					<div class="pics">
+						<img src="img/desc1.webp" >
+						<img src="img/desc2.webp" >
+					</div>
+				</div>
+			</main>
+			
+			<footer>
+				<div class="handle">
+					<div class="collection">
+						<img src="img/collection1.png" >
+						<span>收藏</span>
+					</div>
+					<div class="cart">
+						<img src="img/cart.png" >
+						<span>购物车</span>
+					</div>
+				</div>
+				<div class="handle">
+					<a href="javascript:">加入购物车</a>
+					<a href="javascript:">立即购买</a>
+				</div>
+			</footer>
+		</div>
+		
+		<script src="js/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			let shopSwiper = new Swiper('.swiper-container', {
+				direction: 'horizontal', // 水平播放
+				loop: true, // 循环模式选项
+				// autoplay: true,
+				
+				// 如果需要分页器
+				pagination: {
+				  el: '.swiper-pagination',
+				},
+			})
+		</script>
+	</body>
+</html>

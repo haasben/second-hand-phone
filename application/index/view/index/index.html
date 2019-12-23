@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="__INDEX__css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="__INDEX__js/swiper/css/swiper.min.css"/>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<input type="search" class="to_search" placeholder="搜索商品,获得更多好货">
+			</header>
+			<main class="contents">
+				<!-- banner -->
+				<div class="banner">
+					<div class="swiper-container">
+						<div class="swiper-wrapper">
+							{volist name="$index_data.banner" id="v"}
+							<div class="swiper-slide">
+								<img src="{$v.ad_code}" >
+							</div>
+							{/volist}
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				<!-- 分类 -->
+				<div class="category">
+					<ul>
+						{volist name="$index_data.cates" id="v"}
+						<li>
+							<a href="javascript:">
+								<img src="{$v.image}" >
+								<span>{$v.name}</span>
+							</a>
+						</li>
+						{/volist}
+						
+					</ul>
+				</div>
+				
+				<!-- 今日秒杀 -->
+				<div class="adv">
+					<div class="adv_seckill">
+						<span>限时秒杀</span>
+						<div class="img-box">
+							{volist name="$index_data.spike_ad" id="v"}
+							<img src="{$v.ad_code}" >
+							{/volist}
+						</div>
+						
+					</div>
+					<div class="adv_recovery">
+						<span>手机回收</span>
+						<div class="wrap">
+							<p>极速打款有保障,最高加价20%</p>
+							{volist name="$index_data.recover_ad" id="v"}
+							<img src="{$v.ad_code}" >
+							{/volist}
+						</div>
+						
+					</div>
+				</div>
+				<!-- 为你推荐 -->
+				<div class="goods_list">
+					<div class="img-title">
+						<img src="__INDEX__img/rec.png" >
+					</div>
+					<ul>
+					{volist name="$index_data.promotions" id="v"}
+						<li>
+							<a href="javascript:">
+								<div class="img-box">
+									<img src="{$v.prom_img}" >
+								</div>
+								<div class="title">
+									<p>{$v.title}</p>
+									<span>剩余{$v.days}天</span>
+								</div>
+								<p class="explain">{$v.subtitle}</p>
+							</a>
+						</li>
+					{/volist}
+					</ul>
+				</div>
+			
+			</main>
+{include file="common/footer"}			
+			
+		<script src="__INDEX__js/swiper/js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var myMobileSwiper = new Swiper ('.swiper-container', {
+				direction: 'horizontal', // 垂直切换选项
+				loop: true, // 循环模式选项
+				autoplay: true,
+				
+				// 如果需要分页器
+				pagination: {
+				  el: '.swiper-pagination',
+				},
+			})
+			
+		</script>
+	</body>
+</html>
